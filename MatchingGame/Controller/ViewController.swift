@@ -10,14 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var bluePlayerName: UITextField!
-    
     @IBOutlet weak var redPlayerName: UITextField!
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        var blueName = bluePlayerName.text ?? "Blue"
+//        var redName = redPlayerName.text ?? "Red"
     }
 
-
+    @IBAction func startMatchButton(_ sender: Any) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startGame" {
+            let destinationController = segue.destination as! MatchingGameController
+            destinationController.blueName = bluePlayerName.text ?? "Blue"
+            destinationController.redName = redPlayerName.text ?? "Red"
+        }
+    }
+    
 }
 
