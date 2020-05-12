@@ -36,12 +36,27 @@ public enum AppError: Error {
 
 final class ShopifyAPIClient {
     
-    static func getAllProducts(completionHandler: @escaping ((ShopifyImageData?, AppError) -> Void))
+    static func getAllProducts(completionHandler: @escaping (AppError?, [Products]?) -> Void)
     {
-        guard let url = URL.init(string: "https://shopicruit.myshopify.com/admin/products.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6") else {
-            completionHandler(nil, .badURL("URL Not Working"))
-            return
-            
+        NetworkHelper.shared.performDataTask(endpointURLString: "https://shopicruit.myshopify.com/admin/products.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6#") { (appError, data, httpResponse) in
+            if let appError = appError {
+                completionHandler(appError,nil)
+            }
+            guard let response = httpResponse,
+                (200...299).contains(response.statusCode) else {
+                    let statusCode = httpResponse?.statusCode ?? -999
+                    completionHandler(AppError.badStatusCode(String(statusCode)), nil)
+                    return
+            }
+            if let data = data {
+              do {
+                let shopifyImageData = try JSONDecoder().decode(ShopifyImageData.self, from: data)
+                let products = shopifyImageData.products
+                completionHandler(nil, products)
+              } catch {
+                completionHandler(AppError.decodingError(error), nil)
+              }
+            }
         }
         
         

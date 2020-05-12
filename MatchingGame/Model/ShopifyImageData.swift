@@ -13,7 +13,7 @@ struct ShopifyImageData: Decodable {
 }
 
 struct Products : Decodable {
-    let images : Images
+    let images : [Images]
 }
 
 struct Images : Decodable {

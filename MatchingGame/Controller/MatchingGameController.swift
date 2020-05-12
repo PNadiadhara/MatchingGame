@@ -11,6 +11,15 @@ import UIKit
 class MatchingGameController: UIViewController {
     @IBOutlet weak var GameBoardCollectionView: UICollectionView!
     
+    private var products = [Products]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.GameBoardCollectionView.reloadData()
+            }
+            print(products.count)
+        }
+    }
+    
     //MARK: -   Blue Player info
     @IBOutlet weak var bluePlayerName: UILabel!
     @IBOutlet weak var bluePlayerScoreInverted: UILabel!
@@ -28,6 +37,8 @@ class MatchingGameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getImagesFromAPI()
+        
         bluePlayerName.text = blueName
         bluePlayerscore.text = String(blueScore)
         bluePlayerScoreInverted.text = String(blueScore)
@@ -41,6 +52,17 @@ class MatchingGameController: UIViewController {
         
 
         
+    }
+    
+    private func getImagesFromAPI(){
+        ShopifyAPIClient.getAllProducts { (appError, products) in
+            if let appError = appError {
+                print(appError.errorMessage())
+            } else if let products = products {
+                self.products = products
+            }
+        }
+        print(products.count)
     }
     
 
