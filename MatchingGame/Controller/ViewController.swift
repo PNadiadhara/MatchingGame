@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         if segue.identifier == "startGame" {
             let destinationController = segue.destination as! MatchingGameController
             destinationController.blueName = bluePlayerName.text ?? "Blue"
-            destinationController.redName = redPlayerName.text ?? "Red"
+            destinationController.redName = redPlayerName.text ?? "R"
         }
     }
     

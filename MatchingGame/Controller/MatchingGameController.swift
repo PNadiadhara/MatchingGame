@@ -16,14 +16,14 @@ class MatchingGameController: UIViewController {
     @IBOutlet weak var bluePlayerScoreInverted: UILabel!
     @IBOutlet weak var bluePlayerscore: UILabel!
     var blueName = String()
-    var blueScore = 00
+    var blueScore = 01
     
     //MARK: -   Red Player info
     @IBOutlet weak var redPlayerName: UILabel!
     @IBOutlet weak var redPlayerScoreInverted: UILabel!
     @IBOutlet weak var redPlayerScore: UILabel!
     var redName = String()
-    var redScore = 00
+    var redScore = 01
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,6 @@ class MatchingGameController: UIViewController {
         redPlayerScore.text = String(redScore)
         redPlayerScoreInverted.text = String(redScore)
         redPlayerScoreInverted.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-        
         
 
         

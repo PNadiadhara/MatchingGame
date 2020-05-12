@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BF6628242469ED3F000F70A5 /* MatchingGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6628232469ED3F000F70A5 /* MatchingGameController.swift */; };
+		BF6EFF3B246A5DDA0048CF8F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EFF3A246A5DDA0048CF8F /* NetworkHelper.swift */; };
+		BF6EFF3E246A5E640048CF8F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EFF3D246A5E640048CF8F /* ImageHelper.swift */; };
 		BF84560D24638F8F00BC185C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84560C24638F8F00BC185C /* AppDelegate.swift */; };
 		BF84560F24638F8F00BC185C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84560E24638F8F00BC185C /* SceneDelegate.swift */; };
 		BF84561124638F8F00BC185C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84561024638F8F00BC185C /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		BF6628232469ED3F000F70A5 /* MatchingGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingGameController.swift; sourceTree = "<group>"; };
+		BF6EFF3A246A5DDA0048CF8F /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		BF6EFF3D246A5E640048CF8F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		BF84560924638F8F00BC185C /* MatchingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF84560C24638F8F00BC185C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF84560E24638F8F00BC185C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF6EFF3C246A5DE70048CF8F /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				BF6EFF3A246A5DDA0048CF8F /* NetworkHelper.swift */,
+				BF6EFF3D246A5E640048CF8F /* ImageHelper.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
 		BF84560024638F8F00BC185C = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				BF84560C24638F8F00BC185C /* AppDelegate.swift */,
+				BF6EFF3C246A5DE70048CF8F /* NetworkServices */,
 				BF845623246759F300BC185C /* Model */,
 				BF84560E24638F8F00BC185C /* SceneDelegate.swift */,
 				BF845620246392A400BC185C /* Controller */,
@@ -163,12 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6EFF3B246A5DDA0048CF8F /* NetworkHelper.swift in Sources */,
 				BF845622246393DF00BC185C /* ShopifyAPIClient.swift in Sources */,
 				BF84561124638F8F00BC185C /* ViewController.swift in Sources */,
 				BF6628242469ED3F000F70A5 /* MatchingGameController.swift in Sources */,
 				BF84560D24638F8F00BC185C /* AppDelegate.swift in Sources */,
 				BF84560F24638F8F00BC185C /* SceneDelegate.swift in Sources */,
 				BF84562524675A0900BC185C /* ShopifyImageData.swift in Sources */,
+				BF6EFF3E246A5E640048CF8F /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
