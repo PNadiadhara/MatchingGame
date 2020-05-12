@@ -9,22 +9,25 @@
 import UIKit
 
 class MatchingGameController: UIViewController {
-
+    @IBOutlet weak var GameBoardCollectionView: UICollectionView!
+    
+    //MARK: -   Blue Player info
+    @IBOutlet weak var bluePlayerName: UILabel!
+    @IBOutlet weak var bluePlayerScoreInverted: UILabel!
+    @IBOutlet weak var bluePlayerscore: UILabel!
+    
+    //MARK: -   Red Player info
+    @IBOutlet weak var redPlayerName: UILabel!
+    @IBOutlet weak var redPlayerScoreInverted: UILabel!
+    @IBOutlet weak var redPlayerScore: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
